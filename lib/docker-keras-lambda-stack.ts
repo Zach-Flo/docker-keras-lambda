@@ -9,7 +9,7 @@ export class DockerKerasLambdaStack extends cdk.Stack {
     const dockerFunc = new lambda.DockerImageFunction(this, "Dockerfunc", {
       code: lambda.DockerImageCode.fromImageAsset("./image"),
       memorySize: 1024,
-      timeout: cdk.Duration.seconds(10),
+      timeout: cdk.Duration.seconds(30),
     });
 
     const functionUrl = dockerFunc.addFunctionUrl({

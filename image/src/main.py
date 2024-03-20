@@ -9,7 +9,7 @@ def handler(event, context):
 
     sample_data = gen_input_data()
     test = load_model.predict(sample_data).tolist()
-    output = json.dump(event)
+    output = json.dumps(test)
     return {"statusCode": 200, "body": output}
 
 def gen_input_data(shape1 = (1,5),shape2 = (1,24,77)):
